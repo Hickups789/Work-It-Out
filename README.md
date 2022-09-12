@@ -1,8 +1,19 @@
 <h1 align="center" id="title">Work It Out</h1>
 
-<p align="center"><img src="n/a" alt="project-image"></p>
+![Screen Shot 2022-09-11 at 10 41 32 PM](https://user-images.githubusercontent.com/105450365/189565718-21dde21d-5e68-4d15-9a18-2610678ab693.jpeg)
 
-<p id="description">Description added soon....</p>
+<h2>Description</h2>
+   <p> - Your concept/idea - An app that lets users find and create workouts/workout plans. </p>
+    <p> - What problem does your idea address? - People who need help creating a workout routine/staying on track with their workouts.</P>
+   <p> - How does your application solve the problem? - Provides users with preset workout routines as well as the ability to create their own.</p>
+   <p> - Who is your target audience? - Anyone who wants to workout.</p>
+   <p> - A brief workflow - how do you navigate through your application. 
+   <p> - User gets on website, registers.  From there they can select the type of workout or create their own workout.  If user selects a premade workout then it is displayed to user.  If user selects create a new workout then they are given inputs to make their own workout.  Once workout is created user can access that workout from the main workout page.</p>
+   
+     User Story - As a Gym goer. I want to be able to find/create workouts. So that I can make gains in the gym
+ 
+  
+
 
 <h2>Demo</h2>
 
