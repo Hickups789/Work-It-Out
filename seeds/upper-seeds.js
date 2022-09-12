@@ -1,4 +1,4 @@
-const { Upper } = ("../models");
+const { Upper } = require("../models");
 
 const upperBodyData = [
   {
