@@ -1,23 +1,31 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Fullbody extends Model {}
+class WorkoutTracker extends Model {}
 
-Fullbody.init(
+WorkoutTracker.init(
   {
-    work_out: {
+    work_out_id: {
       type: DataTypes.STRING,
       allowNull: false,
       required: true,
+      references: {
+        model: 'workout',
+        key: 'id'
+      }
     },
 
-    sets: {
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       required: true,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
     },
 
-    reps: {
+    created_at: {
       type: DataTypes.INTEGER,
       allowNull: false,
       required: true,
@@ -27,8 +35,8 @@ Fullbody.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "fullbody",
+    modelName: "upper",
   }
 );
 
-module.exports = Fullbody;
+module.exports = WorkoutTracker;
