@@ -1,23 +1,18 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Upper extends Model {}
+class Workout extends Model {}
 
-Upper.init(
+Workout.init(
   {
-    work_out: {
+    id: {
       type: DataTypes.STRING,
       allowNull: false,
       required: true,
+      primaryKey: true
     },
-
-    sets: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      required: true,
-    },
-
-    reps: {
+    
+    workout_name: {
       type: DataTypes.INTEGER,
       allowNull: false,
       required: true,
@@ -27,8 +22,8 @@ Upper.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "upper",
+    modelName: "workout",
   }
 );
 
-module.exports = Upper;
+module.exports = Workout;
