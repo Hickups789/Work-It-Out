@@ -21,12 +21,10 @@ WorkoutTracker.belongsTo(Workout, {
 
 User.belongsToMany(Workout, {
     through: WorkoutTracker,
-    as: 'workouts',
 })
 
 Workout.belongsToMany(User, {
     through: WorkoutTracker,
-    as: 'users',
 })
 
 Workout.hasMany(Exercise, {

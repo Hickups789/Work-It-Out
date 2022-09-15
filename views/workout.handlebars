@@ -11,32 +11,13 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th scope="row"><!-- Name of exercise --></th>
-                    <td><!-- # of reps--></td>
-                    <td><!-- # of sets --></td>
-                </tr>
-                <tr>
-                    <th scope="row"><!-- Name of exercise --></th>
-                    <td><!-- # of reps--></td>
-                    <td><!-- # of sets --></td>
-                </tr>
-                <tr>
-                    <th scope="row"><!-- Name of exercise --></th>
-                    <td><!-- # of reps--></td>
-                    <td><!-- # of sets --></td>
-                </tr>
-                <tr>
-                    <th scope="row"><!-- Name of exercise --></th>
-                    <td><!-- # of reps--></td>
-                    <td><!-- # of sets --></td>
-                </tr>
-                <tr>
-                    <th scope="row"><!-- Name of exercise --></th>
-                    <td><!-- # of reps--></td>
-                    <td><!-- # of sets --></td>
-                </tr>
- 
+                    {{#each workout.exercise as |exercise|}}
+                        <tr>
+                            <th scope="row">{{workout.exercise.exercise_name}}</th>
+                            <td>{{workout.exercise.num_sets}}</td>
+                            <td>{{workout.exercise.num.reps}}</td>
+                        </tr>
+                    {{/each}}
                 </tbody>
             </table>
         </div>
