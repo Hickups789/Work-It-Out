@@ -9,6 +9,7 @@ Workout.init(
       type: DataTypes.STRING,
       allowNull: false,
       required: true,
+      primaryKey: true
     },
     
     workout_name: {
@@ -21,7 +22,7 @@ Workout.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "fullbody",
+    modelName: "workout",
   }
 );
 

@@ -37,7 +37,7 @@ Exercise.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "fullbody",
+    modelName: "exercise",
   }
 );
 

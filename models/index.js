@@ -5,18 +5,6 @@ const WorkoutTracker = require('./WorkoutTracker');
 const Exercise = require('./Exercise');
 
 
-User.hasMany(Post, {
-    foreignKey: 'user_id'
-  });
-
-User.belongsToMany(Post, {
-through: Vote,
-as: 'voted_posts',
-
-foreignKey: 'user_id',
-onDelete: 'SET NULL'
-});
-
 User.hasMany(WorkoutTracker, {
     foreignKey: 'user_id'
   });
@@ -41,5 +29,15 @@ Workout.belongsToMany(User, {
     as: 'users',
 })
 
+Workout.hasMany(Exercise, {
+  foreignKey: 'workout_id'
+})
+
+Exercise.belongsTo(Workout, {
+  foreignKey: 'workout_id'
+})
+
+
+module.exports = { User, Workout, WorkoutTracker, Exercise };
 
 

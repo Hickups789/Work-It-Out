@@ -35,7 +35,7 @@ WorkoutTracker.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "upper",
+    modelName: "workouttracker",
   }
 );
 
