@@ -1,8 +1,8 @@
-const seedUsers = require('./user-seeds');
-const seedLower = require('./lower-seeds');
+const seedUser = require('./user-seeds');
+const seedLower = require('./workout-seeds');
 const seedUpper = require('./upper-seeds');
 const sequelize = require('../config/connection');
-const seedFullBody = require('./fullbody-seeds');
+const seedExcersize = require('./Excersize-seeds');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
@@ -16,7 +16,7 @@ const seedAll = async () => {
   await seedUpper();
   console.log('--------------');
 
-  await seedFullBody();
+  await seedExcersize();
   console.log('--------------');
 
   process.exit(0);

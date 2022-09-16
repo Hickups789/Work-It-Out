@@ -1,6 +1,6 @@
-const { Fullbody } = require("../models");
+const { Exercise } = require("../models");
 
-const fullBodyData = [
+const excersizeData = [
   {
     work_out: "Bench Press",
     sets: 4,
@@ -63,6 +63,6 @@ const fullBodyData = [
   },
 ];
 
-const seedFullBody = () => Fullbody.bulkCreate(fullBodyData);
+const seedExcersize = () => Exercise.bulkCreate(excersizeData);
 
-module.exports = seedFullBody;
+module.exports = seedExcersize;

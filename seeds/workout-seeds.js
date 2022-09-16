@@ -1,6 +1,6 @@
-const { Lower } = require("../models");
+const { Workout } = require("../models");
 
-const lowerBodyData = [
+const workoutData = [
   {
     work_out: "Back Squat",
     sets: 4,
@@ -33,6 +33,6 @@ const lowerBodyData = [
   },
 ];
 
-const seedLower = () => Lower.bulkCreate(lowerBodyData);
+const seedWorkout = () => Workout.bulkCreate(workoutData);
 
-module.exports = seedLower;
+module.exports = seedWorkout;

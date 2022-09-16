@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { Fullbody, Lower, Upper, User } = require('../models');
+const { Exercise, Workout, User } = require('../models');
 
 const userdata = [
     {
