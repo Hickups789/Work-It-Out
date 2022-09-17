@@ -1,6 +1,6 @@
 const { Exercise } = require("../models");
 
-const excersizeData = [
+const exercizeData = [
   {
     id:1,
     work_out: "Bench Press",
@@ -148,6 +148,6 @@ const excersizeData = [
 ];
 
 
-const seedExcersize = () => Exercise.bulkCreate(excersizeData);
+const seedExercize = () => Exercise.bulkCreate(exercizeData);
 
-module.exports = seedExcersize;
+module.exports = seedExercize;
