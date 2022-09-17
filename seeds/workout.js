@@ -1,20 +1,20 @@
 const { Workout } = require("../models");
 
-const workoutBodyData = [
+const workoutData = [
   {
     id: 1,
-    workout_name:'Upper',
+    workout_name:'Fully Body',
   },
   {
     id: 2,
-    workout_name:'Lower',
+    workout_name:'Lower Body',
   },
   {
     id: 3,
-    workout_name:'Full Body',
+    workout_name:'Upper Body',
   },
 ];
 
-const seedLower = () => Lower.bulkCreate(workoutBodyData);
+const seedWorkout = () => Workout.bulkCreate(workoutData);
 
-module.exports = seedLower;
+module.exports = seedWorkout;
