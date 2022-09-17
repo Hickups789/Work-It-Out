@@ -1,7 +1,7 @@
 const seedUser = require('./user-seeds');
 const seedWorkout = require('./workout-seeds');
 const sequelize = require('../config/connection');
-const seedExcersize = require('./Excersize-seeds');
+const seedExcersize = require('./excersize-seeds');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
