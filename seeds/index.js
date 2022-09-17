@@ -1,6 +1,5 @@
 const seedUser = require('./user-seeds');
-const seedLower = require('./workout-seeds');
-const seedUpper = require('./upper-seeds');
+const seedWorkout = require('./workout-seeds');
 const sequelize = require('../config/connection');
 const seedExcersize = require('./Excersize-seeds');
 
@@ -10,7 +9,7 @@ const seedAll = async () => {
   await seedUser();
   console.log('--------------');
 
-  await seedLower();
+  await seedWorkout();
   console.log('--------------');
 
   await seedUpper();
