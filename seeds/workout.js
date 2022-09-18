@@ -13,6 +13,10 @@ const workoutData = [
     id: 3,
     workout_name:'Upper Body',
   },
+  {
+    id:4,
+    workout_name:'Abs'
+  }
 ];
 
 const seedWorkout = () => Workout.bulkCreate(workoutData);
