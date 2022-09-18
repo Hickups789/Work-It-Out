@@ -55,14 +55,19 @@ router.get('/workout/:id', (req, res) => {
         }
 
         const workout = dbWorkoutData.get({ plain: true });
+        const exercises = dbWorkoutData.exercises.map(exercises => exercises.get({ plain: true }));
 
-        WorkoutTracker.create({
+        console.log(workout)
+        console.log(exercises)
+
+        /*WorkoutTracker.create({
             workout_id: dbWorkoutData.id,
             user_id: req.session.user_id
-        })
+        })*/
 
         res.render('workout', {
             workout,
+            exercises,
             loggedIn: req.session.loggedIn
         });
     })

@@ -6,7 +6,7 @@ class Exercise extends Model {}
 Exercise.init(
   {
     workout_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       required: true,
       references: {
@@ -16,7 +16,7 @@ Exercise.init(
     },
     
     exercise_name: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       required: true,
     },
@@ -37,7 +37,7 @@ Exercise.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "exercise",
+    modelName: 'exercise',
   }
 );
 
