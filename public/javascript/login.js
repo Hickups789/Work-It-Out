@@ -13,7 +13,7 @@ async function loginFormHandler(event) {
       })
       .then(res => {
           console.log(res)
-          /*document.location.replace('/selectworkout/');*/
+          document.location.replace('/selectworkout/');
           alert(res.statusText);
       })
       .catch(err => {
