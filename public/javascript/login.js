@@ -1,5 +1,3 @@
-const axios = require('axios').default;
-
 async function loginFormHandler(event) {
     event.preventDefault();
   
@@ -8,26 +6,23 @@ async function loginFormHandler(event) {
     console.log(userEmail)
     console.log(userPassword)
 
-    if (email && password) {
-      const response = await fetch('/api/users/login', {
-
-        method: 'post',
-        body: JSON.stringify({
-          email,
-          password
-        }),
-        headers: { 'Content-Type': 'application/json' }
-      });
-  
-      if (response.ok) {
-        console.log(response)
-        document.location.replace('/selectWorkout/');
-      } else {
-        alert(response.statusText);
-      }
+    if (userEmail && userPassword) {
+      axios.post('/api/user/login', {
+        email: userEmail,
+        password: userPassword
+      })
+      .then(res => {
+          console.log(res)
+          document.location.replace('/selectWorkout/');
+          alert(res.statusText);
+      })
+      .catch(err => {
+        console.log(err)
+        alert('Invalid Email or Password')
+      })
     }
   }
 
   document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
 
-  document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);
+  /*document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);*/
