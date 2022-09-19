@@ -13,4 +13,12 @@ if (process.env.JAWSDB_URL) {
     port: 3306
   });
 }
-module.exports = sequelize;
+
+
+module.exports = sequelize, 
+{
+HOST: "us-cdbr-east-06.cleardb.net",
+USER: "b982418f13fd2b",
+PASSWORD: "8b48c179",
+DB: "heroku_516b0f3dc834288"
+};
