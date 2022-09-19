@@ -1,52 +1,56 @@
 async function loginFormHandler(event) {
     event.preventDefault();
   
-    const email = document.querySelector('#email-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
-  
-    if (email && password) {
-      const response = await fetch('/api/users/login', {
-        method: 'post',
-        body: JSON.stringify({
-          email,
-          password
-        }),
-        headers: { 'Content-Type': 'application/json' }
-      });
-  
-      if (response.ok) {
-        document.location.replace('/dashboard');
-      } else {
-        alert(response.statusText);
-      }
+    const userEmail = document.querySelector('#email-login').value.trim();
+    const userPassword = document.querySelector('#password-login').value.trim();
+    console.log(userEmail)
+    console.log(userPassword)
+
+    if (userEmail && userPassword) {
+      axios.post('/api/user/login', {
+        email: userEmail,
+        password: userPassword
+      })
+      .then(res => {
+          console.log(res)
+          document.location.replace('/selectworkout/');
+          alert(res.statusText);
+      })
+      .catch(err => {
+        console.log(err)
+        alert('Invalid Email or Password')
+      })
     }
   }
-  
-  async function signupFormHandler(event) {
-    event.preventDefault();
-  
-    const email = document.querySelector('#login').value.trim();
-    const password = document.querySelector('#signup').value.trim();
-  
-    if (email && password) {
-      const response = await fetch('/api/users', {
-        method: 'post',
-        body: JSON.stringify({
-          username,
-          email,
-          password
-        }),
-        headers: { 'Content-Type': 'application/json' }
-      });
-  
-      if (response.ok) {
-        document.location.replace('/');
-      } else {
-        alert(response.statusText);
-      }
-    }
+
+async function signupFormHandler(event) {
+  event.preventDefault();
+
+  const userName = document.querySelector('#username-signup').value.trim();
+  const userEmail = document.querySelector('#email-signup').value.trim();
+  const userPassword = document.querySelector('#password-signup').value.trim();
+
+  if (userName && userEmail && userPassword) {
+    axios.post('/api/user', {
+      username: userName,
+      email: userEmail,
+      password: userPassword
+    })
+    .then(res => {
+      console.log(res)
+      document.location.replace('/selectworkout/');
+      alert(res.statusText);
+    })
+    .catch(err => {
+      console.log(err)
+      alert('Something happened')
+    })
   }
-  
+}
+
+
+if(location.href.includes('login')){
   document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
-  
+} else if(location.href.includes('signup')) {
   document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
+}

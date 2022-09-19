@@ -7,7 +7,9 @@ const { Exercise, User, Workout, WorkoutTracker } = require('../models');
 
 router.get('/', (req, res) => {
     if (req.session.loggedIn) {
-      res.redirect('/');
+      res.render('selectworkout', {
+        loggedIn: req.session.loggedIn
+      });
       return;
     }
   
@@ -22,6 +24,16 @@ router.get('/signup', (req, res) => {
   
     res.render('signup');
   });
+router.get('/selectworkout', (req, res) => {
+  if (req.session.loggedIn) {
+    res.render('selectWorkout', {
+      loggedIn: req.session.loggedIn
+    });
+    return;
+  }
+
+  res.redirect('/')
+});
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
@@ -30,7 +42,18 @@ router.get('/login', (req, res) => {
     }
   
     res.render('login');
-  });
+});
+
+router.post('/logout', (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  }
+  else {
+    res.status(404).end();
+  }
+});
 
 router.get('/workout/:id', (req, res) => {
     Workout.findOne({
@@ -57,7 +80,7 @@ router.get('/workout/:id', (req, res) => {
         const workout = dbWorkoutData.get({ plain: true });
         const exercises = dbWorkoutData.exercises.map(exercises => exercises.get({ plain: true }));
 
-        console.log(workout)
+        /*console.log(workout)
         console.log(exercises)
 
         /*WorkoutTracker.create({
