@@ -5,8 +5,14 @@ class WorkoutTracker extends Model {}
 
 WorkoutTracker.init(
   {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
+    },
     work_out_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       required: true,
       references: {
@@ -14,7 +20,6 @@ WorkoutTracker.init(
         key: 'id'
       }
     },
-
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -23,19 +28,13 @@ WorkoutTracker.init(
         model: 'user',
         key: 'id'
       }
-    },
-
-    created_at: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      required: true,
-    },
+    }
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "workouttracker",
+    modelName: 'workouttracker',
   }
 );
 

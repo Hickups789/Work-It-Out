@@ -1,6 +1,6 @@
 // import all models
 const Workout = require('./Workout');
-const User = require('./User');
+const User = require('./user');
 const WorkoutTracker = require('./WorkoutTracker');
 const Exercise = require('./Exercise');
 

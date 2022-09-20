@@ -24,11 +24,11 @@
 
 
 
-nav ul {
+/*nav ul {
     position:relative;
     z-index:1
   }
-
+*/
 
 
 * {
@@ -141,4 +141,3 @@ nav ul {
     background: none;
     color: #3486eb;
   }
-  

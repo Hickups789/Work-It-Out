@@ -6,14 +6,14 @@ class Workout extends Model {}
 Workout.init(
   {
     id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       required: true,
       primaryKey: true
     },
     
     workout_name: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       required: true,
     },
@@ -22,7 +22,7 @@ Workout.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "workout",
+    modelName: 'workout',
   }
 );
 
