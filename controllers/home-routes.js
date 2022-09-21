@@ -7,7 +7,7 @@ const { Exercise, User, Workout, WorkoutTracker } = require('../models');
 
 router.get('/', (req, res) => {
     if (req.session.loggedIn) {
-      res.render('selectworkout', {
+      res.render('selectWorkout', {
         loggedIn: req.session.loggedIn
       });
       return;
@@ -24,7 +24,7 @@ router.get('/signup', (req, res) => {
   
     res.render('signup');
   });
-router.get('/selectworkout', (req, res) => {
+router.get('/selectWorkout', (req, res) => {
   if (req.session.loggedIn) {
     res.render('selectWorkout', {
       loggedIn: req.session.loggedIn
