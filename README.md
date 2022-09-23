@@ -17,8 +17,8 @@
 
 <h2>Demo</h2>
 
-[https://github.com/Hickups789/Work-It-Out.git](https://github.com/Hickups789/Work-It-Out.git)
-[https://work-it-out-project.herokuapp.com/](https://work-it-out-project.herokuapp.com/)
+- [https://github.com/Hickups789/Work-It-Out.git](https://github.com/Hickups789/Work-It-Out.git)
+- [https://work-it-out-project.herokuapp.com/](https://work-it-out-project.herokuapp.com/)
 <h2>Project Screenshots:</h2>
 
 <img width="1440" alt="Screen Shot 2022-09-22 at 10 21 15 PM" src="https://user-images.githubusercontent.com/105450365/191881312-c0bf8ed7-26ed-4587-87f6-b4bfc2cad8df.png">
